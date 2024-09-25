@@ -129,14 +129,6 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
 stress_nlp_venv/  # Add your venv name here
 # Spyder project settings
 .spyderproject
@@ -158,7 +150,10 @@ dmypy.json
 
 # pytype static type analyzer
 .pytype/
+<<<<<<< HEAD
 stress_nlp_new/
+=======
+>>>>>>> dd04ea1f6f15e460fb286d825620aae095c498e6
 
 # Cython debug symbols
 cython_debug/
