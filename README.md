@@ -23,3 +23,8 @@ The target variable in this project is status, which represents various mental h
 Characteristics:
     Multi-Class: This project involves multiple target classes, making it a multi-class classification problem.
     Imbalanced Data: The dataset is imbalanced, meaning that some classes have significantly more instances than others. This imbalance may affect the performance of machine learning models, requiring the use of techniques like class weighting or oversampling to handle this issue effectively.
+
+
+# Output 
+
+![Alt text](ouput.PNG)

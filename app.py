@@ -9,19 +9,19 @@ from nltk.tokenize import word_tokenize
 import os
 
 # Load the stopwords from the pickle file
-with open('/content/stopwords.pickle', 'rb') as f:
+with open('stopwords.pickle', 'rb') as f:
     stop_words = pickle.load(f)
 
 # Load the saved XGBoost model
-with open('/content/xgb_model.pickle', 'rb') as f:
+with open('xgb_model.pickle', 'rb') as f:
     xgb_model = pickle.load(f)
 
 # Load the saved label encoder
-with open('/content/label_encoder.pickle', 'rb') as f:
+with open('label_encoder.pickle', 'rb') as f:
     le = pickle.load(f)
 
 # Load the saved TF-IDF vectorizer
-with open('/content/tfidf_vectorizer.pickle', 'rb') as f:
+with open('tfidf_vectorizer.pickle', 'rb') as f:
     tfidf_vectorizer = pickle.load(f)
 
 lemmatizer = WordNetLemmatizer()
