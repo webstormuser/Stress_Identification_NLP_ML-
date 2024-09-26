@@ -1,29 +1,30 @@
 import streamlit as st
 import pandas as pd
 import pickle
-import nltk
+from scipy.sparse import hstack
 import re
 from urllib.parse import urlparse
-from spacy import load
 from nltk.stem import WordNetLemmatizer
-from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
-from scipy.sparse import hstack
+import os
+
+# Load the stopwords from the pickle file
+with open('/content/stopwords.pickle', 'rb') as f:
+    stop_words = pickle.load(f)
 
 # Load the saved XGBoost model
-with open('xgb_model.pickle', 'rb') as f:
+with open('/content/xgb_model.pickle', 'rb') as f:
     xgb_model = pickle.load(f)
 
 # Load the saved label encoder
-with open('label_encoder.pickle', 'rb') as f:
+with open('/content/label_encoder.pickle', 'rb') as f:
     le = pickle.load(f)
 
 # Load the saved TF-IDF vectorizer
-with open('tfidf_vectorizer.pickle', 'rb') as f:
+with open('/content/tfidf_vectorizer.pickle', 'rb') as f:
     tfidf_vectorizer = pickle.load(f)
-    
+
 lemmatizer = WordNetLemmatizer()
-stop_words = set(stopwords.words('english'))
 
 def textProcess(sent):
     try:
@@ -55,7 +56,6 @@ def textProcess(sent):
     except Exception as ex:
         print("Error:", ex)
         return sent
-    
 
 # Prediction code 
 def predict_new_text(new_text):
@@ -91,3 +91,4 @@ if st.button('Predict'):
         st.write(f'The predicted stress category is: {result}')
     else:
         st.write('Please enter some text to get a prediction.')
+
