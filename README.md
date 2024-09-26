@@ -28,3 +28,5 @@ Characteristics:
 # Output 
 
 ![Alt text](ouput.PNG)
+![Alt text](ouput3.PNG)
+![Alt text](ouput2.PNG)
